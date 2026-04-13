@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Irayya S Hiremath - Portfolio</title>
+
+<style>
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', sans-serif;
+}
+
+/* HERO SECTION */
+.hero {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 100vh;
+    padding: 50px;
+    background: linear-gradient(to right, #667eea, #764ba2);
+    color: white;
+}
+
+/* TEXT */
+.hero-text {
+    max-width: 50%;
+}
+
+.hero-text h1 {
+    font-size: 45px;
+    margin-bottom: 20px;
+}
+
+.hero-text p {
+    font-size: 18px;
+    margin-bottom: 20px;
+}
+
+.btn {
+    display: inline-block;
+    padding: 12px 20px;
+    background: white;
+    color: #764ba2;
+    text-decoration: none;
+    border-radius: 5px;
+    font-weight: bold;
+    transition: 0.3s;
+}
+
+.btn:hover {
+    background: #ddd;
+}
+
+/* IMAGE */
+.hero img {
+    width: 420px;
+    max-width: 100%;
+    border-radius: 15px;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.3);
+}
+
+/* RESPONSIVE */
+@media(max-width: 768px) {
+    .hero {
+        flex-direction: column;
+        text-align: center;
+        height: auto;
+    }
+
+    .hero-text {
+        max-width: 100%;
+    }
+
+    .hero-text h1 {
+        font-size: 30px;
+    }
+
+    .hero img {
+        margin-top: 20px;
+        width: 260px;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<section class="hero">
+
+    <div class="hero-text">
+        <h1>Hi, I'm Irayya 👋</h1>
+        <p>
+            I am a Computer Science Engineering student passionate about AI-based systems, 
+            secure computing, and cloud technologies. I build real-world applications 
+            using Java, Python, and web technologies.
+        </p>
+        <a href="https://github.com/veeresh3704" class="btn" target="_blank">View My Work</a>
+    </div>
+
+    <div>
+        <img src="myphoto.jpeg" alt="Irayya Hiremath Photo">
+    </div>
+
+</section>
+
+</body>
+</html>

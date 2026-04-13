@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Interactive Form</title>
+  <style>
+    body {
+      font-family: Arial;
+      background: linear-gradient(135deg, #74c0fc, #a5d8ff);
+      height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .card {
+      background: white;
+      padding: 30px;
+      border-radius: 15px;
+      width: 300px;
+      text-align: center;
+      box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+    }
+
+    input {
+      width: 90%;
+      padding: 10px;
+      margin: 10px 0;
+      border-radius: 8px;
+      border: 1px solid #ccc;
+    }
+
+    button {
+      width: 100%;
+      padding: 10px;
+      background: #339af0;
+      color: white;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+    }
+
+    .error {
+      color: red;
+      font-size: 14px;
+      margin: 5px 0;
+    }
+
+    .success {
+      color: green;
+      margin-top: 10px;
+      font-weight: bold;
+    }
+  </style>
+</head>
+
+<body>
+
+  <div class="card">
+    <h2>Interactive Form ✨</h2>
+
+    <input type="text" id="name" placeholder="Enter Name">
+    <p id="nameError" class="error"></p>
+
+    <input type="email" id="email" placeholder="Enter Email">
+    <p id="emailError" class="error"></p>
+
+    <input type="password" id="password" placeholder="Enter Password">
+    <p id="passwordError" class="error"></p>
+
+    <button onclick="validateForm()">Submit</button>
+
+    <p id="success" class="success"></p>
+  </div>
+
+  <script>
+    function validateForm() {
+      let name = document.getElementById("name").value;
+      let email = document.getElementById("email").value;
+      let password = document.getElementById("password").value;
+
+      let valid = true;
+
+      // Clear previous errors
+      document.getElementById("nameError").innerText = "";
+      document.getElementById("emailError").innerText = "";
+      document.getElementById("passwordError").innerText = "";
+      document.getElementById("success").innerText = "";
+
+      // Name validation
+      if (name.trim() === "") {
+        document.getElementById("nameError").innerText = "Name is required ❌";
+        valid = false;
+      }
+
+      // Email validation
+      if (!email.includes("@") || !email.includes(".")) {
+        document.getElementById("emailError").innerText = "Invalid email ❌";
+        valid = false;
+      }
+
+      // Password validation
+      if (password.length < 6) {
+        document.getElementById("passwordError").innerText =
+          "Password must be at least 6 characters ❌";
+        valid = false;
+      }
+
+      // Success
+      if (valid) {
+        document.getElementById("success").innerText =
+          "Form submitted successfully ✅";
+
+        // Reset form
+        document.getElementById("name").value = "";
+        document.getElementById("email").value = "";
+        document.getElementById("password").value = "";
+      }
+    }
+  </script>
+
+</body>
+</html>
